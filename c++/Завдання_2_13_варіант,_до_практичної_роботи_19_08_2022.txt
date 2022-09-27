@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int n;
+  A1: cout<<"input n: ";
+  cin >> n;
+  switch (n) {
+     case 68: cout<<"It's Kyivstar"; break;
+     case 98: cout<<"It's Kyivstar"; break;
+     case 63: cout<<"It's Lifecell"; break;
+     case 66: cout<<"It's MTC"; break;
+     case 67: cout<<"It's Kyivstar"; break;
+     case 99: cout<<"It's MTC"; break;
+     case 73: cout<<"It's Lifecell"; break;
+     case 93: cout<<"It's Lifecell"; break;
+     default: {
+         cout << "You don't write correct start of number\n";
+         goto A1;
+         }
+      }
+}
