@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+#include <stdio.h>
+
+#define A 5    // Місце для вводу з клавіатури, міняємо цифри і від цього змінюється сам массив + виконується головна умова завдання "...друкує кількість елементів заданого масиву, більших за A."
+
+
+int main( int argc, char* arr[])
+{
+int a[A] = {0};
+
+    for (int i = 0; i < A; i++)
+    a[i] = i + A;
+    for(int i = 0; i < A; ++i)
+    printf (" %d " , a[i]);
+    
+}
