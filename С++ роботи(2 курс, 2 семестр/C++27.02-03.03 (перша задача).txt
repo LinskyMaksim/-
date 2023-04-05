@@ -1,0 +1,36 @@
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    
+    int fa[5] = {-2, -1, 1, 1, 2};
+    int *array = new int[5] {-2, -1, 0, 1, 2};
+    int dodatni = 0;
+    int minus = 0;
+    int one = fa[0];
+    int two = fa[1];
+    int three = fa[2];
+    int four = fa[3];
+    int five = fa[4];
+    
+if (one > 0 && one !=0) {dodatni++;}
+else minus++;
+if (two > 0 && two !=0) {dodatni++;}
+else minus++;
+if (three > 0 && three !=0) {dodatni++;}
+else minus++;
+if (four > 0 && four !=0) {dodatni++;}
+else minus++;
+if (five > 0 && five !=0) {dodatni++;}
+else minus++;
+
+
+
+cout<<"Dodatni - "<< dodatni<<endl;
+cout<<"Minus - "<< minus;
+
+    
+}

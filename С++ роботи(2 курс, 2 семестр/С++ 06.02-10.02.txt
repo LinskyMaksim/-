@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std; 
+int main()
+{
+    int nums[3][3] { {0, 2, 3} , {5, 6, 7}, {9, 9, 12}};
+    unsigned int n { sizeof(nums)/sizeof(nums[0]) };         // число рядків
+    unsigned int m { sizeof(nums[0])/sizeof(nums[0][0]) };   // число стовпчиків
+       
+    int *end {nums[0] + n * m - 1};    // вказівник на останній елемент 
+    int *ptr {nums[0]};                // вказівник на перший елемент
+    int *ptr2{nums[0] + 1};            // другий
+    int *ptr3{nums[0] + 2};            // третій
+    int *ptr4{nums[0] + 3};            // четвертий
+    int *ptr5{nums[0] + 4};            // п'ятий
+    int *ptr6{nums[0] + 5};            // шостий
+    int *ptr7{nums[0] + 6};            // сьомий
+    int *ptr8{nums[0] + 7};            // восьмий
+    for( unsigned i{1}; ptr <= end; ptr++, i++)
+    {
+        cout << *ptr << "\t";
+
+        // переходим на новую строку
+        if(i%m == 0)
+        {
+            cout << endl;
+        }
+    }
+    int parni = 0;
+    if(*ptr%2 == 0) parni++;
+    if(*ptr2%2 == 0) parni++;
+    if(*ptr3%2 == 0) parni++;
+    if(*ptr4%2 == 0) parni++;
+    if(*ptr5%2 == 0) parni++;
+    if(*ptr6%2 == 0) parni++;
+    if(*ptr7%2 == 0) parni++;
+    if(*ptr8%2 == 0) parni++;
+    if(*end%2 == 0) parni++;
+    cout<<parni << " - even numbers" <<endl;    //Парні числа
+    cout<<9-parni << " - odd numbers";          //Непарні числа
+
+}

@@ -1,0 +1,103 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std; 
+int main()
+{
+int a;
+int b;
+int chek;
+
+cout << "Enter count of a (rows (3 or 4)) - " << endl;       // should enter - 4 :)
+cin >> a;
+cout << "Enter count of a (cols (3 or 4)) - " << endl;       // should enter - 4 :)
+cin >> b;
+cout << "If your array 4x4 - enter 4, if your array 3x3 - enter 3 ";
+cout <<"Enter identificator of arr - " << endl;
+cin >> chek;
+
+
+ int **arr = new int*[a];
+ 
+ for(int i = 0; i < a; i++) {
+
+     arr[i] = new int [b];
+     }
+//
+for (int i = 0; i < a; i++) {
+   
+    for(int j = 0; j < b; j++ ) {
+        
+        arr[i][j] = rand() % 10;
+        
+        }
+    
+    }
+
+for (int i = 0; i < a; i++) {
+    
+    for (int j = 0; j < b; j++) {
+        
+        cout << arr[i][j] << "\t";
+        
+        }
+    
+    cout <<endl;
+    
+
+
+    }
+    
+
+    int *ptr1{arr[0]};                // вказівник на перший елемент
+    int *ptr2{arr[0] + 1};            // другий
+    int *ptr3{arr[0] + 2};            // третій
+    int *ptr4{arr[0] + 3};            // четвертий
+    int *ptr5{arr[0] + 4};            // п'ятий
+    int *ptr6{arr[0] + 5};            // шостий
+    int *ptr7{arr[0] + 6};            // сьомий
+    int *ptr8{arr[0] + 7};            // восьмий
+    int *ptr9{arr[0] + 8};
+    int *ptr10{arr[0] + 9};
+        int *ptr11{arr[0] + 10};
+            int *ptr12{arr[0] + 11};
+                int *ptr13{arr[0] + 12};
+                    int *ptr14{arr[0] + 13};
+                        int *ptr15{arr[0] + 14};
+
+    
+    int parni = 0;
+    if(*ptr1%2 == 0) parni++;
+    if(*ptr2%2 == 0) parni++;
+    if(*ptr3%2 == 0) parni++;
+    if(*ptr4%2 == 0) parni++;
+    if(*ptr5%2 == 0) parni++;
+    if(*ptr6%2 == 0) parni++;
+    if(*ptr7%2 == 0) parni++;
+    if(*ptr8%2 == 0) parni++;
+    if(*ptr9%2 == 0) parni++;
+    if(chek == 4) {
+    if(*ptr10%2 == 0) parni++;
+    if(*ptr11%2 == 0) parni++;
+    if(*ptr12%2 == 0) parni++;
+    if(*ptr13%2 == 0) parni++;
+    if(*ptr14%2 == 0) parni++;
+    if(*ptr15%2 == 0) parni++;
+    }
+    cout<<parni << " - even numbers" <<endl;    //Парні числа
+    if (chek == 4) {
+        cout<<16-parni << " - odd numbers" <<endl; //Непарні числа
+        }
+    else cout<<9-parni << " - odd numbers" <<endl; 
+    
+ 
+   
+    for (int i = 0; i < a; i++) {
+        
+        delete [] arr[i];
+        
+        }
+        
+        delete [] arr;   
+        
+
+}
