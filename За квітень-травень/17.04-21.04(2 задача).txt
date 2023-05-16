@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+
+class FlightBooking {
+public:
+void set(int id, int capacity, int reserved);
+void get();
+FlightBooking(int id, int capacity, int reserved);
+void printStatus();
+double percentage(int capacity, int reserved);
+
+private:
+int id = 1;
+int capacity;
+int reserved;
+};
+void FlightBooking::printStatus()
+{
+    cout << "Flight " << this -> id << " : " << this -> reserved << "/" << this -> capacity << 
+    " " << "(" << percentage(this -> capacity, this -> reserved) << "%) seats reserved" << '\n';
+}
+FlightBooking::FlightBooking(int inputId, int inputCapacity, int inputReserved)
+{
+    set(inputId, inputCapacity, inputReserved);
+}
+
+void FlightBooking::set(int inputId, int inputCapacity, int inputReserved){
+    id = inputId;
+    capacity = inputCapacity;
+    reserved = inputReserved;
+    }
+    
+void FlightBooking::get(){
+       cout << this -> id << "/" << this -> capacity << "/" << this -> reserved << '\n';
+    }
+
+double FlightBooking::percentage(int capacity, int reserved){
+    return reserved * 100 / capacity;
+    }
+
+
+int main() {
+int reserved = 0,
+capacity = 0;
+std::cout << "Provide flight capacity: ";
+std::cin >> capacity;
+std::cout << "Provide number of reserved seats: ";
+std::cin >> reserved;
+FlightBooking booking(1, capacity, reserved);
+booking.printStatus();
+return 0;
+}

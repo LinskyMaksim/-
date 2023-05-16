@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class IPAddress {
+protected:
+    string ipAddress;
+
+public:
+    IPAddress(const string& ipAddress) : ipAddress(ipAddress) {}
+    IPAddress(const IPAddress& other) : ipAddress(other.ipAddress) {}
+
+    virtual void print() const {
+        cout << ipAddress << '\n';
+    }
+};
+
+class IPAddressChecked : public IPAddress {
+private:
+    bool isCorrect;
+
+public:
+    IPAddressChecked(const string& ipAddress, bool isCorrect)
+        : IPAddress(ipAddress), isCorrect(isCorrect) {}
+
+    IPAddressChecked(const IPAddressChecked& other)
+        : IPAddress(other), isCorrect(other.isCorrect) {}
+
+    void print() const override {
+        cout << ipAddress << " - " << (isCorrect ? "Correct" : "Not Correct") << '\n';
+    }
+};
+
+int main() {
+    string ip1 = "1.2.3.4";
+    string ip2 = "999.29.29.29";
+    string ip3 = "199.29.29.29";
+
+    IPAddress ip(ip1);
+    IPAddressChecked ipChecked1(ip2, false);
+    IPAddressChecked ipChecked2(ip3, true);
+
+    ip.print();
+    ipChecked1.print();
+    ipChecked2.print();
+
+    return 0;
+}
+

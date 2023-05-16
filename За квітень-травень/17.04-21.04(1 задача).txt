@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class ShopItemOrder{
+    private:
+string name;
+int price;
+int number;
+public:
+ShopItemOrder (string _name, int _price, int _number) {
+    setShopItemOrder(_name, _price, _number);
+    }
+    void message(){
+        cout << "\nItem:\n";
+        }
+        void setShopItemOrder (string _name, int _price, int _number) {
+            name = _name;
+            price = _price;
+            number = _number;
+            }
+        
+        void getShopItemOrder() {
+            cout << name << ", Price: " << price << ", Number: " << number << endl;
+            }
+    };
+
+
+class TotalPrice{
+    private:
+    int price;
+    int number;
+    public:
+    TotalPrice(int price1, int number1) {
+        setTotalPrice(price1, number1);
+        }
+    void message(){
+        cout << "\nTotal price: \n";
+        }
+    void setTotalPrice(int price1, int number1){
+        price = price1;
+        number = number1;
+        }
+    void getTotalPrice() {
+        int total = price * number;
+        cout<< total;
+        }
+    
+    
+    };
+int main(){
+    
+    ShopItemOrder item("Computer", 10000, 5);
+    item.message();
+    item.getShopItemOrder();
+    
+    TotalPrice Item(10000, 5);
+    Item.message();
+    Item.getTotalPrice();
+    return 0;
+    }

@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+  private:
+    int zp;
+    int a;
+
+  public:
+    void setZp(int z) {
+      zp = z;
+    }
+    int getZp() {
+      return zp;
+    }
+    public:
+    void setA(int x) {
+        a = x;
+        }
+
+    int getA() {
+        return a;
+        }
+};
+
+int main() {
+  Employee abc;
+  abc.setZp(50000);
+  abc.setA(1);
+  cout <<"Your salary - " << abc.getZp()  << " at " << abc.getA() << " month.";
+  return 0;
+}

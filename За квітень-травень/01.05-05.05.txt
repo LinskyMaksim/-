@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+class Fraction {
+public:
+    Fraction(int numerator, int denominator);
+    string toString();
+    double toDouble();
+
+private:
+    int numerator;
+    int denominator;
+};
+
+Fraction::Fraction(int numerator, int denominator) : numerator(numerator), denominator(denominator) {}
+
+string Fraction::toString() {
+    int wholePart = numerator / denominator;
+    int remainder = abs(numerator) % denominator;
+
+    stringstream ss;
+    if (numerator < 0) {
+        ss << "-";
+    }
+
+    if (wholePart != 0) {
+        ss << abs(wholePart) << " ";
+    }
+
+    ss << abs(remainder) << "/" << abs(denominator);
+
+    return ss.str();
+}
+
+double Fraction::toDouble() {
+    return static_cast<double>(numerator) / denominator;
+}
+
+int main(void) {
+    int num, den;
+    string input;
+
+    cout << "Enter a fraction in the form [numerator] / [denominator]: ";
+    getline(cin, input);
+
+    stringstream ss(input);
+    ss >> num;
+    ss.ignore(2); // Ignore the ' / ' characters
+    ss >> den;
+
+    Fraction fraction(num, den);
+    cout << fraction.toString() << " is " << fraction.toDouble() << " in decimal." << endl;
+
+    return 0;
+}
